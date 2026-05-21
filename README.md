@@ -117,7 +117,7 @@ An example of how to install, based on the installation of the Jamf Protect inte
 
 ### 1. Deploy the binary via Jamf
 If you distribute the pkg via Jamf, this prevents issues with notarization.
-* download the latest `.pkg` from the releases page
+* download the latest `.pkg` from the [releases page](https://github.com/avanwouwe/wazuh-json-transformer/releases/latest)
 * upload the package to Jamf Pro
 * deploy to your target endpoints via a Jamf policy
 * the binary is installed to `/usr/local/bin/wazuh-json-transformer`
