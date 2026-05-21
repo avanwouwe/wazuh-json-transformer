@@ -1,0 +1,40 @@
+<group name="jamf,">
+
+<var name="jamf_description">Jamf Protect alert : $(jamf.description)</var>
+
+  <rule id="66200" level="3">
+    <decoded_as>json</decoded_as>
+    <location>jamf</location>
+    <description>$jamf_description</description>
+    <options>no_full_log</options>
+  </rule>
+
+  <rule id="66201" level="8">
+    <if_sid>66200</if_sid>
+    <field name="jamf.error">\.+</field>
+    <description>Jamf Protect integration error : $(jamf.error)</description>
+    <options>no_full_log</options>
+  </rule>
+
+  <rule id="66202" level="10">
+    <if_sid>66200</if_sid>
+    <field name="jamf.severity">^1$</field>
+    <description>$jamf_description</description>
+    <options>no_full_log</options>
+  </rule>
+
+    <rule id="66203" level="12">
+    <if_sid>66200</if_sid>
+    <field name="jamf.severity">^2$</field>
+    <description>$jamf_description</description>
+    <options>no_full_log</options>
+  </rule>
+
+  <rule id="66204" level="14">
+    <if_sid>66200</if_sid>
+    <field name="jamf.severity">^3$</field>
+    <description>$jamf_description</description>
+    <options>no_full_log</options>
+  </rule>
+
+</group>

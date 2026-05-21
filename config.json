@@ -1,0 +1,19 @@
+{
+  "input": {
+    "path": "/var/log/JamfProtect.log",
+    "frequency": 1
+  },
+  "output": {
+    "tag": "jamf"
+  },
+  "fields": {
+    "id":               "input.match.event.timestamp",
+    "timestamp":        "<now>",
+    "jamf.error":       "<error>",
+    "jamf.type":        "input.match.facts[0].name",
+    "jamf.description": "input.match.facts[0].human",
+    "jamf.severity":    "input.match.facts[0].severity",
+    "jamf.pid":         "input.match.event.pid",
+    "jamf.event":       "<full_source>"
+  }
+}

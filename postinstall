@@ -1,0 +1,21 @@
+#!/bin/bash
+
+BINARY_NAME="wazuh-json-transformer"
+INSTALL_DIR="/usr/local/bin"
+ARCH=$(arch)
+
+if [[ "$ARCH" == "arm64" ]]; then
+    SOURCE_BIN="$INSTALL_DIR/${BINARY_NAME}-arm64"
+    UNUSED_BIN="$INSTALL_DIR/${BINARY_NAME}-x86_64"
+else
+    SOURCE_BIN="$INSTALL_DIR/${BINARY_NAME}-x86_64"
+    UNUSED_BIN="$INSTALL_DIR/${BINARY_NAME}-arm64"
+fi
+
+rm -f "$INSTALL_DIR/$BINARY_NAME"
+
+cp "$SOURCE_BIN" "$INSTALL_DIR/$BINARY_NAME"
+rm -f "$SOURCE_BIN"
+rm -f "$UNUSED_BIN"
+
+chmod 755 "$INSTALL_DIR/$BINARY_NAME"
