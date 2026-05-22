@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 BINARY_NAME="wazuh-json-transformer"
 SOURCE_SCRIPT="wazuh-json-transformer.py"
 

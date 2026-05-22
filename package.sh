@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eu
+set -euo pipefail
 
 PACKAGE_ID="wazuh-json-transformer"
 BINARY_NAME="wazuh-json-transformer"
